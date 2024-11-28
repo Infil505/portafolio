@@ -21,7 +21,7 @@ export default function PortfolioPage() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/3">
                   <Image
-                    src="/placeholder.svg?height=300&width=300"
+                    src="/imagen.jpeg"
                     alt="Foto de perfil"
                     width={300}
                     height={300}
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
                     <Image
-                      src="/placeholder.svg?height=450&width=800"
+                      src="/practica.png"
                       alt="Vista previa de Sinpe-TP Pasajero"
                       width={800}
                       height={450}
@@ -99,18 +99,17 @@ export default function PortfolioPage() {
                         <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Flutter</span>
                       </div>
                     </div>
-                    <Button variant="outline" className="group w-fit">
-                      Ver detalles
-                      <a
-                        href="https://save-food-gamma.vercel.app/"
+                    <a
+                        href="https://www.canva.com/design/DAGV0DB3CEo/iMrYWz06s77MCKu2hi0bDQ/edit?utm_content=DAGV0DB3CEo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block"
                       >
+                    <Button variant="outline" className="group w-fit">
+                      Ver detalles
                         <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
-
                     </Button>
+                    </a>
                   </div>
                 </div>
               </CardContent>
@@ -121,7 +120,7 @@ export default function PortfolioPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
                     <Image
-                      src="/placeholder.svg?height=450&width=800"
+                      src="/wiki.png"
                       alt="Vista previa WIKI Mapa interactivo de la revolución digital"
                       width={800}
                       height={450}
@@ -165,7 +164,7 @@ export default function PortfolioPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
                     <Image
-                      src="/placeholder.svg?height=450&width=800"
+                      src="/save_food.png"
                       alt="Vista previa de SaveFood"
                       width={800}
                       height={450}
