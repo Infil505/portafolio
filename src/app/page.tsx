@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink } from 'lucide-react'
 import Image from "next/image"
 import { SocialLink } from "@/components/ui/social-link"
+import ThemeToggle from "@/components/ui/theme";
+
 
 export default function PortfolioPage() {
   return (
@@ -11,6 +13,7 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Darwin Silva Gadea</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mt-2">Ingeniero en Sistemas</p>
+          <ThemeToggle />
         </div>
       </header>
 
