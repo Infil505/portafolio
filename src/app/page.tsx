@@ -103,7 +103,7 @@ export default function PortfolioPage() {
                     <Button variant="outline" className="group w-fit">
                       Ver detalles
                       <a
-                        href="https://save-food-1lgo.vercel.app/"
+                        href="https://save-food-gamma.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block"
