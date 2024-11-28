@@ -2,8 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.neon-btn {
+  border-color: transparent;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  color: #ffffff;
+  text-shadow: 0 0 8px #ff00cc, 0 0 16px #3333ff;
+  box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff, 0 0 30px #ff00cc;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-btn:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff, 0 0 45px #ff00cc;
+}
+
+.neon-icon {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ff00cc, 0 0 16px #3333ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-icon:hover {
+  text-shadow: 0 0 15px #ff00cc, 0 0 30px #3333ff;
+}
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 @layer base {
@@ -69,4 +95,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
