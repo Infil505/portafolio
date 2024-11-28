@@ -1,101 +1,234 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ExternalLink } from 'lucide-react'
+import Image from "next/image"
+import { SocialLink } from "@/components/ui/social-link"
 
-export default function Home() {
+export default function PortfolioPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <header className="py-12 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Darwin Silva Gadea</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mt-2">Ingeniero en Sistemas</p>
         </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-16">
+        <section className="mb-20">
+          <Card className="overflow-hidden border-0 shadow-none bg-transparent">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="md:w-1/3">
+                  <Image
+                    src="/placeholder.svg?height=300&width=300"
+                    alt="Foto de perfil"
+                    width={300}
+                    height={300}
+                    className="rounded-full"
+                  />
+                </div>
+                <div className="md:w-2/3">
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Perfil Profesional</h2>
+                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                    Ingeniero en Sistemas recién graduado con sólidos conocimientos en desarrollo web y desarrollo móvil.
+                    Mi enfoque se centra en la creación de soluciones tecnológicas eficientes y escalables.
+                    Busco oportunidades para aplicar mis habilidades técnicas y analíticas en proyectos desafiantes
+                    que impulsen la innovación y el crecimiento empresarial.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">
+            Lenguajes, Tecnologías y metodologias Usadas
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "JavaScript",
+              "React",
+              "Node.js",
+              "php",
+              "SQL MariaDB",
+              "SQLite",
+              "Git",
+              "C++",
+              "Metodologías Ágiles (Scrum)",
+              "Metodologías Ágiles (Kanban)",
+              "sqlServer",
+              "Java",
+            ].map((tech) => (
+              <Card key={tech} className="bg-gray-50 dark:bg-gray-800 border-0">
+                <CardContent className="flex items-center justify-center p-4">
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100">{tech}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">Proyectos Destacados</h2>
+          <div className="space-y-12">
+            <Card className="border-0 shadow-sm">
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+                    <Image
+                      src="/placeholder.svg?height=450&width=800"
+                      alt="Vista previa de Sinpe-TP Pasajero"
+                      width={800}
+                      height={450}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 p-4 flex items-end">
+                      <p className="text-white text-sm">Vista previa de la aplicación</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Sinpe-TP Pasajero</h3>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        En esta aplicación, mi práctica abarcó tanto el desarrollo de las interfaces (vistas) que se presentan a los usuarios como la implementación de funcionalidades internas que garantizan el correcto funcionamiento de la aplicación. Esto incluyó la creación de diseños intuitivos y accesibles para mejorar la experiencia del usuario, así como la programación de la lógica necesaria para que las diferentes secciones de la aplicación operen de manera eficiente y coherente. Mi contribución combinó aspectos visuales y técnicos, asegurando una integración armoniosa entre el diseño y el rendimiento del sistema.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Dart</span>
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Flutter</span>
+                      </div>
+                    </div>
+                    <Button variant="outline" className="group w-fit">
+                      Ver detalles
+                      <a
+                        href="https://save-food-1lgo.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                      >
+                        <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-sm">
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+                    <Image
+                      src="/placeholder.svg?height=450&width=800"
+                      alt="Vista previa WIKI Mapa interactivo de la revolución digital"
+                      width={800}
+                      height={450}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 p-4 flex items-end">
+                      <p className="text-white text-sm">Mapa interactivo de la revolución digital</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Globalización y Economía Digital</h3>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        Un mapa interactivo diseñado para explorar y analizar cómo la tecnología está transformando nuestra comprensión de la economía global y el panorama de los negocios digitales. Esta herramienta combina datos visuales y funcionalidad dinámica para ilustrar las conexiones, tendencias y cambios impulsados por la innovación tecnológica, ofreciendo una perspectiva clara y actualizada sobre los desafíos y oportunidades en el ámbito económico y empresarial.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">React</span>
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Tailwind CSS</span>
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Next.js</span>
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Dark Mode</span>
+                      </div>
+                    </div>
+                    <a
+                        href="https://wiki-nine-nu.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                      >
+                    <Button variant="outline" className="group w-fit">
+                      Explorar Proyecto
+                        <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-sm">
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+                    <Image
+                      src="/placeholder.svg?height=450&width=800"
+                      alt="Vista previa de SaveFood"
+                      width={800}
+                      height={450}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 p-4 flex items-end">
+                      <p className="text-white text-sm">Vista previa de la plataforma</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">SaveFood</h3>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        Diseñé el proyecto FrontEnd SaveFood como parte de una iniciativa de desarrollo social en el marco de un curso universitario. Este proyecto fue concebido con el propósito de abordar problemáticas relacionadas con el desperdicio de alimentos, promoviendo soluciones innovadoras que contribuyan a una gestión más sostenible de los recursos y al bienestar de las comunidades.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Next.js</span>
+                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">React</span>
+                      </div>
+                    </div>
+                    <a
+                        href="https://save-food-1lgo.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                      >
+                    <Button variant="outline" className="group w-fit">
+                      Ver detalles
+                        <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section>
+          <Card className="border-0 shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">Información de Contacto</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-6 text-gray-700 dark:text-gray-300">
+                Estoy interesado en oportunidades que me permitan crecer profesionalmente y contribuir al éxito de proyectos innovadores.
+                No dude en contactarme para discutir posibles colaboraciones.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <SocialLink url="mailto:dsilvagadea@gmail.com" />
+                <SocialLink url="https://www.linkedin.com/in/your-profile" />
+                <SocialLink url="https://github.com/Infil505" />
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="mt-16 py-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2024 Darwin Silva. Todos los derechos reservados.</p>
       </footer>
     </div>
-  );
+  )
 }
+
