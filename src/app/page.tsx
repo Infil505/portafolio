@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react'
 import Image from "next/image"
 import { SocialLink } from "@/components/ui/social-link"
 import ThemeToggle from "@/components/ui/theme";
+import TechListWithTooltips from "@/components/ui/lista"
 
 
 export default function PortfolioPage() {
@@ -46,31 +47,7 @@ export default function PortfolioPage() {
         </section>
 
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">
-            Lenguajes, Tecnologías y metodologias Usadas
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "JavaScript",
-              "React",
-              "Node.js",
-              "php",
-              "SQL MariaDB",
-              "SQLite",
-              "Git",
-              "C++",
-              "Metodologías Ágiles (Scrum)",
-              "Metodologías Ágiles (Kanban)",
-              "sqlServer",
-              "Java",
-            ].map((tech) => (
-              <Card key={tech} className="bg-gray-50 dark:bg-gray-800 border-0">
-                <CardContent className="flex items-center justify-center p-4">
-                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100">{tech}</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TechListWithTooltips />
         </section>
 
         <section className="mb-20">
@@ -218,7 +195,7 @@ export default function PortfolioPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <SocialLink url="mailto:dsilvagadea@gmail.com" />
-                <SocialLink url="https://www.linkedin.com/in/your-profile" />
+                <SocialLink url="https://www.linkedin.com/in/darwin-silva-52605024b" />
                 <SocialLink url="https://github.com/Infil505" />
               </div>
             </CardContent>
