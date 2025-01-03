@@ -5,7 +5,7 @@ import Image from "next/image"
 import { SocialLink } from "@/components/ui/social-link"
 import ThemeToggle from "@/components/ui/theme";
 import TechListWithTooltips from "@/components/ui/lista"
-
+import manualAu from "@/components/ui/manual"
 
 export default function PortfolioPage() {
   return (
@@ -15,6 +15,7 @@ export default function PortfolioPage() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Darwin Silva Gadea</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mt-2">Ingeniero en Sistemas</p>
           <ThemeToggle />
+          <button onClick={manualAu} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Tutorial</button>
         </div>
       </header>
 
@@ -210,7 +211,7 @@ export default function PortfolioPage() {
       </main>
 
       <footer className="mt-16 py-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; 2024 Darwin Silva. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Darwin Silva Gadea. Todos los derechos reservados.</p>
       </footer>
     </div>
   )
