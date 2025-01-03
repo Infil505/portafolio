@@ -158,7 +158,13 @@ export default function PortfolioPage() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">SaveFood</h3>
                       <p className="text-gray-700 dark:text-gray-300 mb-4">
-                        Diseñé el proyecto FrontEnd SaveFood como parte de una iniciativa de desarrollo social en el marco de un curso universitario. Este proyecto fue concebido con el propósito de abordar problemáticas relacionadas con el desperdicio de alimentos, promoviendo soluciones innovadoras que contribuyan a una gestión más sostenible de los recursos y al bienestar de las comunidades.
+                        Se diseñó el proyecto FrontEnd SaveFood como parte de una iniciativa de desarrollo social en el marco de un curso universitario. Este proyecto fue concebido con el propósito de abordar problemáticas relacionadas con el desperdicio de alimentos, promoviendo soluciones innovadoras que contribuyan a una gestión más sostenible de los recursos y al bienestar de las comunidades.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                          Explicacion para obtener credenciales de administrador:
+                          <br />
+                          <br />
+                          Ingresar un nombre de usuario, ingrese la contraeña de su elección, sin seleccionar un tipo de usuario y en el apartado de codigo del administrador ingresar los siguientes datos: Administrador12345
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Next.js</span>
@@ -166,7 +172,7 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     <a
-                        href="https://save-food-1lgo.vercel.app/"
+                        href="https://save-food-gamma.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block"
