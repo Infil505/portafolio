@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 
 export default function TechListWithTooltips() {
   function Tooltip(props: { children: React.ReactNode; text: string }) {
@@ -25,7 +27,7 @@ export default function TechListWithTooltips() {
     );
   }
 
-  const techData = [
+  const techData = useMemo(() => [
     { name: "JavaScript", info: "Lenguaje de programación orientado a la web. Lo he utilizado tanto en el desarrollo de backend como en la creación de funcionalidades para el frontend." },
     { name: "React", info: "Librería para la construcción de interfaces de usuario. La he empleado en varios proyectos para desarrollar las vistas de aplicaciones web interactivas." },
     { name: "Node.js", info: "Entorno de ejecución para JavaScript en el servidor. Lo he utilizado en proyectos tanto de backend como de frontend." },
@@ -42,7 +44,39 @@ export default function TechListWithTooltips() {
     { name: "Dart", info: "Lenguaje de programación de código abierto desarrollado por Google. Lo he usado principalmente en proyectos de desarrollo móvil con Flutter." },
     { name: "Next.js", info: "Framework de JavaScript basado en React para la creación de aplicaciones web y sitios estáticos. Lo he utilizado en proyectos web para mejorar la experiencia de usuario y el rendimiento." },
     { name: "Drive.js", info: "Librería de JavaScript que permite crear tutoriales paso a paso para explicar a los usuarios cómo utilizar una interfaz gráfica o una sección de una página web" },
-  ];
+  ], []);
+
+  useEffect(() => {
+    const driverObj = driver({
+      popoverClass: "driverjs-theme",
+      stagePadding: 0,
+    });
+
+    techData.forEach((tech) => {
+      const element = document.getElementById(tech.name);
+      if (element) {
+        element.addEventListener("focus", () => {
+          driverObj.highlight({
+            element,
+            popover: {
+              title: tech.name,
+              description: tech.info,
+            },
+          });
+        });
+      }
+    });
+
+    return () => {
+      techData.forEach((tech) => {
+        const element = document.getElementById(tech.name);
+        if (element) {
+          element.removeEventListener("focus", () => {});
+          element.removeEventListener("blur", () => {});
+        }
+      });
+    };
+  }, [techData]);
 
   return (
     <section id="herramientas" className="mb-20">
@@ -51,15 +85,20 @@ export default function TechListWithTooltips() {
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {techData.map((tech) => (
-          <Tooltip key={tech.name} text={tech.info}>
-            <div className="bg-gray-50 dark:bg-gray-800 border-0 rounded-xl shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+          <div
+            key={tech.name}
+            id={tech.name}
+            tabIndex={0} // Hace que el elemento sea enfocable
+            className="bg-gray-50 dark:bg-gray-800 border-0 rounded-xl shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300 focus:outline-none"
+          >
+            <Tooltip text={tech.info}>
               <div className="flex items-center justify-center p-4">
                 <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {tech.name}
                 </span>
               </div>
-            </div>
-          </Tooltip>
+            </Tooltip>
+          </div>
         ))}
       </div>
     </section>
