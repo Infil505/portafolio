@@ -5,17 +5,19 @@ import Image from "next/image"
 import { SocialLink } from "@/components/ui/social-link"
 import ThemeToggle from "@/components/ui/theme";
 import TechListWithTooltips from "@/components/ui/lista"
-import manualAu from "@/components/ui/manual"
+import {StartTourButton} from "@/components/ui/manual"
+
 
 export default function PortfolioPage() {
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <header className="py-12 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Darwin Silva Gadea</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mt-2">Ingeniero en Sistemas</p>
+          <h1 id="nombre" className=" text-4xl font-bold text-gray-900 dark:text-white">Darwin Silva Gadea</h1>
+          <p id="carrera" className=" text-xl text-gray-600 dark:text-gray-400 mt-2">Ingeniero en Sistemas de informacion</p>
           <ThemeToggle />
-          <button onClick={manualAu} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Tutorial</button>
+          <StartTourButton />
         </div>
       </header>
 
@@ -52,7 +54,7 @@ export default function PortfolioPage() {
         </section>
 
         <section className="mb-20">
-          <h2 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">Proyectos Destacados</h2>
+          <h2 id="proyectos" className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">Proyectos Destacados</h2>
           <div className="space-y-12">
             <Card className="border-0 shadow-sm">
               <CardContent className="p-6">
@@ -190,7 +192,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section>
+        <section id="contacto">
           <Card className="border-0 shadow-sm">
             <CardHeader>
               <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">Información de Contacto</CardTitle>
@@ -216,4 +218,3 @@ export default function PortfolioPage() {
     </div>
   )
 }
-

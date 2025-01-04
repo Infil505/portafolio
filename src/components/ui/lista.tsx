@@ -41,10 +41,11 @@ export default function TechListWithTooltips() {
     { name: "Flutter", info: "Framework de código abierto desarrollado por Google para la creación de aplicaciones móviles. Lo he utilizado en el desarrollo de diversas aplicaciones móviles." },
     { name: "Dart", info: "Lenguaje de programación de código abierto desarrollado por Google. Lo he usado principalmente en proyectos de desarrollo móvil con Flutter." },
     { name: "Next.js", info: "Framework de JavaScript basado en React para la creación de aplicaciones web y sitios estáticos. Lo he utilizado en proyectos web para mejorar la experiencia de usuario y el rendimiento." },
+    { name: "Drive.js", info: "Librería de JavaScript que permite crear tutoriales paso a paso para explicar a los usuarios cómo utilizar una interfaz gráfica o una sección de una página web" },
   ];
 
   return (
-    <section className="mb-20">
+    <section id="herramientas" className="mb-20">
       <h2 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white">
         Lenguajes, Tecnologías y Metodologías Usadas
       </h2>
