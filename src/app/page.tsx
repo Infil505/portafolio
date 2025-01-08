@@ -168,6 +168,8 @@ export default function PortfolioPage() {
                           <br />
                           <br />
                           Ingresar un nombre de usuario, ingrese la contraeña de su elección, sin seleccionar un tipo de usuario y en el apartado de codigo del administrador ingresar los siguientes datos: Administrador12345
+                          <br /><br />
+                          Recordar que estas son temporales ya que se almacena en el almacenador del navegador, por tanto no se alamcenan en ninguna base de datos.
                       </p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">Next.js</span>

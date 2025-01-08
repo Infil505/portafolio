@@ -12,7 +12,7 @@ export default function TechListWithTooltips() {
     return (
       <div
         className="relative"
-        onMouseEnter={() => setVisible(true)}
+        onMouseEnter={() => setVisible(false)}
         onMouseLeave={() => setVisible(false)}
         onTouchStart={() => setVisible(true)}
         onTouchEnd={() => setVisible(false)}
@@ -27,7 +27,7 @@ export default function TechListWithTooltips() {
     );
   }
 
-  const techData = useMemo(() => [
+  const techData = useMemo(() => [  // useMemo se utiliza para evitar que se recalcule el array en cada renderizado
     { name: "JavaScript", info: "Lenguaje de programación orientado a la web. Lo he utilizado tanto en el desarrollo de backend como en la creación de funcionalidades para el frontend." },
     { name: "React", info: "Librería para la construcción de interfaces de usuario. La he empleado en varios proyectos para desarrollar las vistas de aplicaciones web interactivas." },
     { name: "Node.js", info: "Entorno de ejecución para JavaScript en el servidor. Lo he utilizado en proyectos tanto de backend como de frontend." },
@@ -88,7 +88,7 @@ export default function TechListWithTooltips() {
           <div
             key={tech.name}
             id={tech.name}
-            tabIndex={0} // Hace que el elemento sea enfocable
+            tabIndex={0} // propiedad que permite que el elemento sea enfocable
             className="bg-gray-50 dark:bg-gray-800 border-0 rounded-xl shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300 focus:outline-none"
           >
             <Tooltip text={tech.info}>
